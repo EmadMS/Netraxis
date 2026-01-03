@@ -1,98 +1,101 @@
 <div align="center">
 
-🛡️👁️ Netraxis
-See the Unseen. Secure the Future.
+# 🛡️👁️ Netraxis
+### See the Unseen. Secure the Future.
+
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Security](https://img.shields.io/badge/Security-AI%20Powered-FF0000?style=for-the-badge&logo=security&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Beta-orange?style=for-the-badge)
 
 <br />
 
-Netraxis is a next-generation Threat Detection Engine that instantly analyzes files and URLs for malicious activity. Built with a custom heuristic core and AI-driven logic, it provides developers and security researchers with a lightweight, high-performance tool to flag zero-day threats and phishing attempts.
+**Netraxis** is a next-generation threat detection engine that helps users instantly identify **Malicious, Safe, or Suspicious** assets.
+Built with a **high-performance Python backend** and **Custom Heuristics**, it runs directly on your machine—no external cloud dependencies required.
 
-View Documentation · Report Bug · Request Feature
+[View Demo](#) · [Report Bug](https://github.com/EmadMS/netraxis/issues) · [Request Feature](https://github.com/EmadMS/netraxis/issues)
 
 </div>
 
-🚀 Features
-📂 Deep File Inspection
+---
 
-Signature Analysis: Scans file hashes against known malware datasets.
+## 🚀 Features
 
-Heuristic Evaluation: file_scanner.py utilizes advanced pattern recognition to detect suspicious executable headers and macro scripts.
+### 📷 **Smart Scanning**
+- **Instant URL Inspection:** Uses advanced parsing via `url_scanner.py` to strip and analyze domains.
+- **Deep File Analysis:** Scans binary headers via `file_scanner.py` to catch hidden threats.
 
-🌐 Live Web Shield
+### 🧠 **Intelligent Analysis**
+- ✅ **Safe Verification:** Checks files against known safe signatures and checksums.
+- ❌ **Threat Detection:** Automatically flags **Phishing, Malware, Scripts, Macros**, and bad domains.
+- ⚠️ **Heuristic Breakdown:** Highlights suspicious code entropy in **Red** for immediate visibility.
 
-Phishing Detection: url_scanner.py parses URLs in real-time to identify deceptive domains and redirect chains.
+### ✨ **Modern Experience**
+- **High-Performance CLI:** Premium command-line interface for rapid execution.
+- **AI-Driven Logic:** Powered by **Custom Algorithms** for fluid, intelligent decisions.
+- **Privacy First:** No data is stored on external servers; analysis is local.
 
-Blocklist Matching: Instantly cross-references links against a local malicious_urls.txt database for millisecond-latency verdicts.
+---
 
-🧠 The Netraxis Brain
+## 🛠️ Tech Stack
 
-AI-Powered Heuristics: Powered by heuristics.py, the engine goes beyond simple matching—scoring "risk levels" based on file entropy and URL structure.
+This project is built using a modern, lightweight, and fast tech stack:
 
-Zero-Latency: Designed to run locally with no dependency on slow external APIs for core functionality.
+| Component | Technology | Description |
+| :--- | :--- | :--- |
+| **Core Engine** | ![Python](https://img.shields.io/badge/-Python-black?logo=python) ![Security](https://img.shields.io/badge/-Security-red?logo=security&logoColor=white) | Handles `src/main.py` logic and scanning orchestration. |
+| **Interface** | ![Bash](https://img.shields.io/badge/-Bash-4EAA25?logo=gnu-bash&logoColor=white) ![Linux](https://img.shields.io/badge/-Linux-FCC624?logo=linux&logoColor=black) | Command Line Interface system. |
+| **Scripting** | ![Scripting](https://img.shields.io/badge/-Scripting-black?logo=python&logoColor=white) | Handles automated file parsing and system checks. |
+| **Libraries** | **Requests** / **Hashlib** | For network validation and cryptographic hashing. |
+| **Data** | **Local Intelligence** | `malicious_urls.txt` database of threats. |
 
-🛠️ Tech Stack
-This project is engineered for speed, privacy, and accuracy:
+---
 
-Component	Technology	Description
-Core Engine		The central nervous system connecting all scanners.
-Detection	Custom Heuristics	Probabilistic logic residing in heuristics.py for unknown threats.
-File Analysis	Hashing (SHA-256)	fast cryptographic verification in file_scanner.py.
-Web Analysis	Regex / Request Parsing	URL structure decomposition in url_scanner.py.
-Data	Local Intelligence	Uses malicious_urls.txt for offline-capable threat lookups.
-📦 Architecture
-The codebase is modular and designed for scalability:
+## 📦 Data Sources
 
-src/main.py: The CLI entry point that orchestrates the scan.
+1.  **Local Threat DB:** Real-time fetching of known bad domains from `malicious_urls.txt`.
+2.  **Netraxis Algorithm:** Custom Python logic (`heuristics.py`) that filters files against a curated list of risk indicators (e.g., entropy, suspicious headers).
 
-src/heuristics.py: The "Brain" containing the AI weighting logic.
+---
 
-src/file_scanner.py: Handles I/O operations and binary analysis.
+## 🧪 Quick Start Guide
 
-src/url_scanner.py: Handles network requests and domain parsing.
+Follow these steps to get **Netraxis** running on your local machine in minutes.
 
-🧪 Quick Start Guide
-Follow these steps to deploy the Netraxis engine on your local machine.
+### 1. Prerequisites
+Ensure you have **Python 3** installed.
 
-1. Prerequisites
-
-Ensure you have Python 3.10+ installed.
-
-2. Clone & Setup
-
-Bash
+### 2. Clone & Install
+```bash
 # Clone the repository
-git clone https://github.com/EmadMS/netraxis.git
+git clone [https://github.com/EmadMS/netraxis.git](https://github.com/EmadMS/netraxis.git)
 
 # Navigate to the folder
 cd netraxis
 
-# (Optional) Create a virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-3. Run a Scan
-
-You can interact with the engine via the main entry point:
+# Install dependencies
+pip install requests
+3. Run the App
 
 Bash
-# Scan a specific file
-python src/main.py --scan-file path/to/suspicious_file.exe
+python src/main.py
+4. Launch
 
-# Scan a URL
-python src/main.py --scan-url http://suspicious-site.com
-Note for Researchers: You can update the threat database manually by appending new domains to malicious_urls.txt.
+Open your terminal and check the output.
+
+Note for Researchers: To expand the detection capabilities, manually append new threat indicators to malicious_urls.txt or adjust the scoring weights in src/heuristics.py.
 
 🔮 Future Roadmap
-[ ] API Mode: Expose functionality via a REST API (FastAPI integration).
+[ ] API Integration: Expose scanning via a REST API.
 
-[ ] Sandboxing: Safely execute suspicious scripts in an isolated environment.
+[ ] Community Reporting: Users can flag false positives.
 
-[ ] PDF & Office Docs: Enhanced parsing for embedded macros.
+[ ] Multi-Format: Support for PDF, EXE, and Office Docs.
 
-[ ] Dashboard: A web-based UI to visualize threat metrics.
+[ ] Native GUI: Build a visual dashboard for scan results.
 
 <div align="center">
 
-Defend. Detect. Destroy.
+See the Unseen. Secure the Future.
 
 Created by EmadMS
 
