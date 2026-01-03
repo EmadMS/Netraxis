@@ -1,73 +1,99 @@
 <div align="center">
-🛡️🤖 Netraxis
-Detect. Protect. Respond.
-<a href="https://www.python.org/"> <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white"> </a> <a href="#"> <img src="https://img.shields.io/badge/Threat_Engine-Heuristics-blue?style=for-the-badge"> </a> <a href="#"> <img src="https://img.shields.io/badge/Status-Beta-orange?style=for-the-badge"> </a> <a href="#"> <img src="https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge"> </a> <br />
-Netraxis is an AI-powered security engine that analyzes files and URLs to detect
-malware, phishing domains, obfuscated payloads, and heuristic-based threats — processed locally with full privacy control.
-View Roadmap · Report Bug · Request Feature
+
+🛡️👁️ Netraxis
+See the Unseen. Secure the Future.
+
+<br />
+
+Netraxis is a next-generation Threat Detection Engine that instantly analyzes files and URLs for malicious activity. Built with a custom heuristic core and AI-driven logic, it provides developers and security researchers with a lightweight, high-performance tool to flag zero-day threats and phishing attempts.
+
+View Documentation · Report Bug · Request Feature
+
 </div>
+
 🚀 Features
-🗂️ Smart File Analysis
-Static + heuristic detection for scripts, binaries, and documents
-Identifies:
-obfuscation patterns
-execution-chain behavior
-threat indicators
-🌐 URL Threat Detection
-Detects:
-phishing structures
-redirect masking
-homoglyph deception
-Uses curated blacklist:
-malicious_urls.txt
-🧠 Heuristic Intelligence Engine
-✅ Weighted risk scoring
-❌ Suspicious behavior flagging
-⚠️ Highlights triggered rules in Red
-✨ Privacy-Focused Security Toolkit
-Local-only processing
-No external upload
-Research & training friendly
+📂 Deep File Inspection
+
+Signature Analysis: Scans file hashes against known malware datasets.
+
+Heuristic Evaluation: file_scanner.py utilizes advanced pattern recognition to detect suspicious executable headers and macro scripts.
+
+🌐 Live Web Shield
+
+Phishing Detection: url_scanner.py parses URLs in real-time to identify deceptive domains and redirect chains.
+
+Blocklist Matching: Instantly cross-references links against a local malicious_urls.txt database for millisecond-latency verdicts.
+
+🧠 The Netraxis Brain
+
+AI-Powered Heuristics: Powered by heuristics.py, the engine goes beyond simple matching—scoring "risk levels" based on file entropy and URL structure.
+
+Zero-Latency: Designed to run locally with no dependency on slow external APIs for core functionality.
+
 🛠️ Tech Stack
+This project is engineered for speed, privacy, and accuracy:
+
 Component	Technology	Description
-Core Engine	Python	Threat logic & scoring
-File Scanner	file_scanner.py	Static file analysis
-URL Scanner	url_scanner.py	Phishing & URL detection
-Heuristic Core	heuristics.py	Rule evaluation engine
-Runner	main.py	CLI execution
-Dataset	malicious_urls.txt	Known malicious URLs
-📦 Data Sources
-Curated malicious URL dataset
-→ malicious_urls.txt
-Netraxis heuristic engine, including:
-encoded payload markers
-behavior signatures
-execution-chain indicators
+Core Engine		The central nervous system connecting all scanners.
+Detection	Custom Heuristics	Probabilistic logic residing in heuristics.py for unknown threats.
+File Analysis	Hashing (SHA-256)	fast cryptographic verification in file_scanner.py.
+Web Analysis	Regex / Request Parsing	URL structure decomposition in url_scanner.py.
+Data	Local Intelligence	Uses malicious_urls.txt for offline-capable threat lookups.
+📦 Architecture
+The codebase is modular and designed for scalability:
+
+src/main.py: The CLI entry point that orchestrates the scan.
+
+src/heuristics.py: The "Brain" containing the AI weighting logic.
+
+src/file_scanner.py: Handles I/O operations and binary analysis.
+
+src/url_scanner.py: Handles network requests and domain parsing.
+
 🧪 Quick Start Guide
+Follow these steps to deploy the Netraxis engine on your local machine.
+
 1. Prerequisites
-Requires Python 3.
+
+Ensure you have Python 3.10+ installed.
+
 2. Clone & Setup
+
+Bash
+# Clone the repository
 git clone https://github.com/EmadMS/netraxis.git
+
+# Navigate to the folder
 cd netraxis
-(Optional virtual environment)
+
+# (Optional) Create a virtual environment
 python -m venv venv
-source venv/bin/activate
-Install dependencies
-pip install -r requirements.txt
-3. Run the Engine
-python src/main.py
-4. Example Usage
-Scan a file:
-python src/main.py --file sample.exe
-Scan a URL:
-python src/main.py --url https://example-site.test
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+3. Run a Scan
+
+You can interact with the engine via the main entry point:
+
+Bash
+# Scan a specific file
+python src/main.py --scan-file path/to/suspicious_file.exe
+
+# Scan a URL
+python src/main.py --scan-url http://suspicious-site.com
+Note for Researchers: You can update the threat database manually by appending new domains to malicious_urls.txt.
+
 🔮 Future Roadmap
- JSON scan reports
- Analyst dashboard
- YARA-style rule support
- Optional hash reputation lookup
- Sandbox simulation mode
+[ ] API Mode: Expose functionality via a REST API (FastAPI integration).
+
+[ ] Sandboxing: Safely execute suspicious scripts in an isolated environment.
+
+[ ] PDF & Office Docs: Enhanced parsing for embedded macros.
+
+[ ] Dashboard: A web-based UI to visualize threat metrics.
+
 <div align="center">
-Detect. Protect. Respond.
+
+Defend. Detect. Destroy.
+
 Created by EmadMS
+
 </div>
