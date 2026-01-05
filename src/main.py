@@ -22,7 +22,7 @@ def start_netraxis():
 
     if mode == "1":
         url = input("Enter URL to scan: ")
-        
+
         # 1. Check Database
         db_result = url_engine.scan(url)
         print(f"\n[Database Check] {db_result}")
